@@ -1,4 +1,5 @@
-<h1 align="center"><img src="/assets/img/logo.png" alt="Logo"></h1>
+<h1 align="center"><img src="/assets/img/logo.png" alt="Logo" style="width:170px;height:170px;"></h1>
+<script src="/assets/js/firstScript.js"></script>
 
 # Nebtonish Website
 
