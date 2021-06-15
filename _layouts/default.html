@@ -1,27 +1,23 @@
 <html>
-  <head>
+<head>
     <link rel="stylesheet" href="{{ 'assets/css/style.css' | relative_url }}">
     <title>Webtonish</title>
-  </head>
-  <body>
+</head>
+<body>
 
-    <div class="wrapper">
-
-      <section>
-        <div id="title">
-	  <h1>
-	    <a href="{{ site.newbaseurl }}">
-	        {{ site.title }}
-	    </a>
-	  </h1>
-          <p>{{ site.description }}</p>
-          <hr>
-        </div>
-
-        {{ content }}
-
-      </section>
-
+<div class="wrapper">
+    <div id="title">
+        <h1>
+            <a href="{{ site.newbaseurl }}">
+                {{ site.title }}
+            </a>
+        </h1>
+        <p>{{ site.description }}</p>
+        <hr>
     </div>
-  </body>
+
+    {{ content }}
+</div>
+
+</body>
 </html>
