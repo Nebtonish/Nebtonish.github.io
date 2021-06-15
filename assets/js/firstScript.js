@@ -1,3 +1,3 @@
 "use strict";
 
-alert("welcome to my website");
+alert(prompt("I will copy you","toCopy?"));
