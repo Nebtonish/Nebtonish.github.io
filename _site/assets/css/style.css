@@ -1,25 +1,27 @@
 @import "https://fonts.googleapis.com/css?family=Open+Sans";
-:root { --font: 'Open Sans', sans-serif; --bg-color: #262626; --form-color: #464646; }
+:root { --font: 'Open Sans', sans-serif; --bg-color: #282e38; --title-color: #c778de; --form-color: #464646; }
 
 * { box-sizing: border-box; }
 
 #title { margin: 50px 0 50px 0; padding: 0 0 5px 0; }
 #title p { font-family: var(--font); color: #bed4d7; text-align: center; font-size: 20px; }
 #title h1 { font-family: var(--font); text-align: center; font-size: 40px; font-weight: normal; }
-#title a:link, #title a:visited { text-decoration: none; }
+#title a:link, #title a:visited { color: var(--title-color); text-decoration: none; }
 #title hr { border-bottom: 2px dashed white; background: transparent; }
 
 body { background-color: var(--bg-color); }
 
 .wrapper { font-family: var(--font); background-color: var(--bg-color); color: #bdbdbd; width: 700px; margin: 0 auto; }
 
-h1 { font-size: 32px; }
+h1 { font-size: 22px; }
 
-h2 { font-size: 20px; }
+h2, h3, h4, h5, h6 { font-size: 17px; }
 
-a:link, a:visited { color: #147fcb; }
+a { text-decoration: none; }
 
-a:hover { color: #2890d9; }
+a:link, a:visited { color: #c778de; }
+
+a:hover { color: #34a5c7; }
 
 button, textarea, input { background-color: var(--form-color); color: white; padding: 5px 10px; margin: 4px 2px; text-align: center; border: none; }
 

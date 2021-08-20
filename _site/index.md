@@ -1,20 +1,20 @@
 <h1 align="center"><img src="/assets/img/logo.png" alt="Logo" style="width:220px;height:220px;"></h1>
 <script src="/assets/js/firstScript.js"></script>
 
-# Nebtonish Website
+# NEBTONISH WEBSITE
 
-## Table of Contents
+## TABLE OF CONTENTS
 
 - seed
 {:toc}
 
-## Welcome to my website
+## WELCOME TO MY WEBSITE
 
 This is my website
 
 I will be using this to potentially post things that I am working on or am interested in
 
-## Posts
+## POSTS
 <ul>
 	{% for post in site.posts %}
 		<li>
@@ -23,7 +23,7 @@ I will be using this to potentially post things that I am working on or am inter
 	{% endfor %}
 </ul>
 
-## Contact me
+## CONTACT ME
 
 <form
   action="https://formspree.io/f/xleabwzw"

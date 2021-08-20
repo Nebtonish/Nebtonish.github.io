@@ -2,7 +2,8 @@
 
 :root {
   --font: 'Open Sans', sans-serif;
-  --bg-color: #262626;
+  --bg-color: #282e38;
+  --title-color: #c778de;
   --form-color: #464646;
 }
 
@@ -29,6 +30,7 @@
   }
 
   a:link, a:visited {
+    color: var(--title-color);
     text-decoration: none;
   }
 
@@ -51,19 +53,23 @@ body {
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 22px;
 }
 
-h2 {
-  font-size: 20px;
+h2, h3, h4, h5, h6 {
+  font-size: 17px;
+}
+
+a {
+  text-decoration: none;
 }
 
 a:link, a:visited {
-  color: #147fcb;
+  color: #c778de;
 }
 
 a:hover {
-  color: #2890d9;
+  color: #34a5c7;
 }
 
 button, textarea, input {

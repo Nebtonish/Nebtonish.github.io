@@ -1,25 +1,25 @@
-# Working on a Fantasy Game
+# WORKING ON A FANTASY GAME
 
 Here I will be documenting my work on a little fantasy game I am working on
 
-## Screenshots
+## SCREENSHOTS
 
-### Overworld
+### OVERWORLD
 
 <h1 align="center"><img src="/assets/img/GameSS1.png" alt="Overworld"></h1>
 
-### Outside Vrirough
+### OUTSIDE VRIROUGH
 
 <h1 align="center"><img src="/assets/img/GameSS2.png" alt="Outside Vrirough"></h1>
 
-### Inside Vrirough
+### INSIDE VRIROUGH
 
 <h1 align="center"><img src="/assets/img/GameSS3.png" alt="Inside Vrirough"></h1>
 
-### Dungeons
+### DUNGEONS
 
 <h1 align="center"><img src="/assets/img/GameSS4.png" alt="Dungeons"></h1>
 
-### Dungeon Depths
+### DUNGEON DEPTHS
 
 <h1 align="center"><img src="/assets/img/GameSS5.png" alt="Dungeon Depths"></h1>
