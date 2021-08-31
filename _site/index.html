@@ -1,9 +1,26 @@
 <html>
 <head>
     <link rel="stylesheet" href="/assets/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Webtonish</title>
 </head>
 <body>
+
+<input type="text" id="mySearch" onkeyup="narrowSearch()" placeholder="Search.." title="Type in a category">
+
+<div id="headingListDiv">
+</div>
+
+<div class="navbar" id="theNavBar">
+	<a class="active" href="#home">Home</a>
+	<a href="/About">About</a>
+	<a href="#contact">Contact</a>
+	<input type="text" placeholder="Search..">
+	<a href="javascript:void(0);" class="icon" onclick="navBarDropDownOnClick()">
+		<i class="fa fa-bars"></i>
+	</a>
+</div>
 
 <div class="wrapper">
     <div id="title">
@@ -68,6 +85,62 @@
 
 	<h1 align="right"><img src="/assets/img/sig.png" style="width:140px;height:44px;"></h1>
 </div>
+
+<script>
+function navBarDropDownOnClick() {
+  var x = document.getElementById("theNavBar");
+  if (x.className === "navbar") {
+    x.className += " responsive";
+  } else {
+    x.className = "navbar";
+  }
+}
+
+function narrowSearch() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("mySearch");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("headerList");
+  li = ul.getElementsByTagName("li");
+
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+
+var $result = $('<ul id="headerList"></ul>');
+var curDepth = 0;
+
+$('h1,h2,h3,h4,h5,h6').addClass('tempHeadingTag');
+$('.tempHeadingTag').each(function() {
+	if (!$(this).attr('id')){
+		/*do not put an item for a heading with no id*/
+		return true;
+	}
+
+    var depth = parseInt(this.tagName.substring(1))-1;
+
+	var indents = "";
+	for (i = 0; i < depth; i++) {
+		indents = indents + "  "
+	}
+	var $a = $('<a/>').attr("href", "#"+$(this).attr('id')).text(indents + $(this).text())
+    var $li = $('<li></li>').html($a);
+
+	$result.append($li)
+});
+
+$('h1,h2,h3,h4,h5,h6').removeClass('tempHeadingTag');
+
+$(function(){
+	$('#headingListDiv').html($result);
+});
+</script>
 
 </body>
 </html>

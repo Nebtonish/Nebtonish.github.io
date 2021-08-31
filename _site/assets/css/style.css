@@ -1,5 +1,5 @@
 @import "https://fonts.googleapis.com/css?family=Open+Sans";
-:root { --font: 'Open Sans', sans-serif; --bg-color: #282e38; --title-color: #c778de; --form-color: #464646; }
+:root { --font: 'Open Sans', sans-serif; --navfont: 'Open Sans', sans-serif; --bg-color: #282e38; --title-color: #c778de; --form-color: #464646; --secondary-color: #c778de; }
 
 * { box-sizing: border-box; }
 
@@ -9,9 +9,9 @@
 #title a:link, #title a:visited { color: var(--title-color); text-decoration: none; }
 #title hr { border-bottom: 2px dashed white; background: transparent; }
 
-body { background-color: var(--bg-color); }
+body { background-color: var(--bg-color); background-image: url("/assets/img/background.png"); background-attachment: fixed; }
 
-.wrapper { font-family: var(--font); background-color: var(--bg-color); color: #bdbdbd; width: 700px; margin: 0 auto; }
+.wrapper { font-family: var(--font); color: #bdbdbd; width: 700px; margin: 0 auto; }
 
 h1 { font-size: 22px; }
 
@@ -19,10 +19,39 @@ h2, h3, h4, h5, h6 { font-size: 17px; }
 
 a { text-decoration: none; }
 
-a:link, a:visited { color: #c778de; }
+a:link, a:visited { color: var(--secondary-color); }
 
 a:hover { color: #34a5c7; }
 
-button, textarea, input { background-color: var(--form-color); color: white; padding: 5px 10px; margin: 4px 2px; text-align: center; border: none; }
+button, textarea, input { background-color: var(--form-color); color: white; padding: 5px 10px; margin: 4px 2px; border: none; }
+
+button { text-align: center; }
 
 textarea { height: 115px; }
+
+.navbar { font-family: var(--font); overflow: hidden; background-color: #3a3b41; position: -webkit-sticky; position: sticky; top: 0; }
+
+.navbar a { float: left; display: block; color: white; text-align: center; padding: 14px 16px; text-decoration: none; font-size: 17px; }
+
+.navbar a:hover { background-color: #242526; color: white; }
+
+.navbar a.active { background-color: var(--secondary-color); color: white; }
+
+.navbar input[type=text] { float: right; padding: 6px; border: none; margin-top: 8px; margin-right: 16px; font-size: 17px; }
+
+.navbar .icon { display: none; }
+
+@media screen and (max-width: 600px) { .navbar a:not(:first-child) { display: none; }
+  .navbar a.icon { float: right; display: block; } }
+@media screen and (max-width: 600px) { .navbar.responsive { position: relative; }
+  .navbar.responsive a.icon { position: absolute; right: 0; top: 0; }
+  .navbar.responsive a { float: none; display: block; text-align: left; } }
+#mySearch { width: 100%; font-size: 18px; padding: 11px; border: 1px solid #ddd; }
+
+#headerList { list-style-type: none; padding: 0; margin: 0; }
+
+#headerList li a { padding: 12px; text-decoration: none; color: black; display: block; }
+
+#headerList li a:hover { background-color: #eee; }
+
+#headingListDiv { white-space: pre; font-family: var(--font); }

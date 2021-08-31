@@ -1,6 +1,6 @@
 <html>
 <head>
-    <link rel="stylesheet" href="{{ 'assets/css/style.css' | relative_url }}">
+    <link rel="stylesheet" href="/assets/css/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Webtonish</title>
@@ -14,7 +14,7 @@
 
 <div class="navbar" id="theNavBar">
 	<a class="active" href="#home">Home</a>
-	<a href="/About">About</a>
+	<a href="#about">About</a>
 	<a href="#contact">Contact</a>
 	<input type="text" placeholder="Search..">
 	<a href="javascript:void(0);" class="icon" onclick="navBarDropDownOnClick()">
@@ -25,15 +25,53 @@
 <div class="wrapper">
     <div id="title">
         <h1>
-            <a href="{{ site.newbaseurl }}">
-                {{ site.title }}
+            <a href="/">
+                TEMP ABOUT PAGE FOR TESTING PURPOSES
             </a>
         </h1>
-        <p>{{ site.description }}</p>
+        <p>This is my website where I put content relating to me</p>
         <hr>
     </div>
 
-    {{ content }}
+    <h1 align="center"><img src="/assets/img/logo.png" alt="Logo" style="width:220px;height:220px;" /></h1>
+<script src="/assets/js/firstScript.js"></script>
+
+<h1 id="nebtonish-website">NEBTONISH WEBSITE</h1>
+
+
+
+<h2 id="welcome-to-my-website">WELCOME TO MY WEBSITE</h2>
+
+<p>This is my website</p>
+
+<p>I will be using this to potentially post things that I am working on or am interested in</p>
+
+<h2 id="posts">POSTS</h2>
+<ul>
+	
+		<li>
+			<a href="/2021/05/31/Fantasy-Game.html">Fantasy Game</a>
+		</li>
+	
+</ul>
+
+<h2 id="contact-me">CONTACT ME</h2>
+
+<form action="https://formspree.io/f/xleabwzw" method="POST">
+  <label>
+    Your email (optional):
+    <br />
+    <input type="email" name="_replyto" />
+  </label>
+  <label>
+    <br />
+    Your message:
+    <br />
+    <textarea name="message"></textarea>
+  </label>
+  <button type="submit">Send</button>
+</form>
+
 
 	<h1 align="right"><img src="/assets/img/sig.png" style="width:140px;height:44px;"></h1>
 </div>
@@ -77,11 +115,11 @@ $('.tempHeadingTag').each(function() {
 
     var depth = parseInt(this.tagName.substring(1))-1;
 
-	var indents = "";
+	var spaces = "";
 	for (i = 0; i < depth; i++) {
-		indents = indents + "  "
+		spaces = spaces + " "
 	}
-	var $a = $('<a/>').attr("href", "#"+$(this).attr('id')).text(indents + $(this).text())
+	var $a = $('<a/>').attr("href", "#"+$(this).attr('id')).text($(this).text())
     var $li = $('<li></li>').html($a);
 
 	$result.append($li)
