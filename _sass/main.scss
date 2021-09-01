@@ -100,7 +100,7 @@ textarea {
   top: 0;
 }
 
-.navbar a {
+.navbar a{
   float: left;
   display: block;
   color: white;
@@ -110,14 +110,24 @@ textarea {
   font-size: 17px;
 }
 
+.navbar img{
+	height: 1px;
+	width: auto;
+	float: left;
+	display: block;
+}
+
 .navbar a:hover {
   background-color: #242526;
   color: white;
 }
 
-.navbar a.active {
-  background-color: var(--secondary-color);
-  color: white;
+#HomeButton span {
+	color: var(--secondary-color);
+}
+
+#HomeButton a {
+  background-color: #282931;
 }
 
 .navbar input[type=text] {
@@ -202,7 +212,7 @@ textarea {
 }
 
 .modal-content {
-	width: 80%
+	//width: 80%
 }
 
 .close {

@@ -1,63 +1,53 @@
 <html>
 <head>
     <link rel="stylesheet" href="/assets/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Webtonish</title>
 </head>
 <body>
 
 <div class="navbar" id="theNavBar">
-	<a class="active" href="#home">Home</a>
+	<div id="HomeButton">
+		<a href="/">
+			<img id="HomeButtonImg" alt="Home" src="/assets/img/logoNoBackground.png">
+			<span>&nbsp;Nebtonish</span>
+		</a>
+	</div>
 	<a href="/About">About</a>
-	<a href="#contact">Contact</a>
-	<a id="myBtn">&#x1F50E;&#xFE0E; Search By Heading</a>
+	<a id="myBtn">&#x1F50E;&#xFE0E; Table Of Contents</a>
 	<div id="modalSearchHeadings" class="modal">
 	  <div class="modal-content">
 		<span class="close">&times;</span>
-		<input type="text" id="mySearch" onkeyup="narrowSearch()" placeholder="Search.." title="Type in a category">
+		<input type="text" id="mySearch" onkeyup="narrowSearch()" placeholder="Search" title="Type in a category">
 		<div id="headingListDiv">
 		</div>
 	  </div>
 	</div>
-	<input type="text" placeholder="Search..">
+	<input type="text" placeholder="Search">
 	<a href="javascript:void(0);" class="icon" onclick="navBarDropDownOnClick()">
 		<i class="fa fa-bars"></i>
 	</a>
 </div>
 
 <div class="wrapper">
-    <div id="title">
+	<div id="title">
         <h1>
-            <a href="/">
-                WELCOME TO MY WEBSITE
-            </a>
+			Home Page
         </h1>
-        <p>This is my website where I put content relating to me</p>
         <hr>
     </div>
 
     <h1 align="center"><img src="/assets/img/logo.png" alt="Logo" style="width:220px;height:220px;" /></h1>
 <script src="/assets/js/firstScript.js"></script>
 
-<h1 id="nebtonish-website">NEBTONISH WEBSITE</h1>
+<h1 id="webtonish">WEBTONISH</h1>
 
-<h2 id="table-of-contents">TABLE OF CONTENTS</h2>
+<h2 id="welcome">WELCOME</h2>
 
-<ul id="markdown-toc">
-  <li><a href="#nebtonish-website" id="markdown-toc-nebtonish-website">NEBTONISH WEBSITE</a>    <ul>
-      <li><a href="#table-of-contents" id="markdown-toc-table-of-contents">TABLE OF CONTENTS</a></li>
-      <li><a href="#welcome-to-my-website" id="markdown-toc-welcome-to-my-website">WELCOME TO MY WEBSITE</a></li>
-      <li><a href="#posts" id="markdown-toc-posts">POSTS</a></li>
-      <li><a href="#contact-me" id="markdown-toc-contact-me">CONTACT ME</a></li>
-    </ul>
-  </li>
-</ul>
+<p>Welcome to my website.</p>
 
-<h2 id="welcome-to-my-website">WELCOME TO MY WEBSITE</h2>
-
-<p>This is my website</p>
-
-<p>I will be using this to potentially post things that I am working on or am interested in</p>
+<p>Here I will be posting projects that I am working on.</p>
 
 <h2 id="posts">POSTS</h2>
 <ul>
@@ -86,7 +76,7 @@
 </form>
 
 
-	<h1 align="right"><img src="/assets/img/sig.png" style="width:140px;height:44px;"></h1>
+	<h1 align="right"><img alt="signature" src="/assets/img/sig.png" style="width:140px;height:44px;"></h1>
 </div>
 
 <script>
@@ -163,6 +153,14 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+$(document).ready(function() {
+	$("#HomeButtonImg").css("height", $("#myBtn").height());
+	
+	$("#myBtn").resize(function(){
+		$("#HomeButtonImg").css("height", $("#myBtn").height());
+    });
+});
 </script>
 
 </body>

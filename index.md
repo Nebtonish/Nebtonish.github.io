@@ -1,18 +1,17 @@
+---
+title: Home Page
+---
+
 <h1 align="center"><img src="/assets/img/logo.png" alt="Logo" style="width:220px;height:220px;"></h1>
 <script src="/assets/js/firstScript.js"></script>
 
-# NEBTONISH WEBSITE
+# WEBTONISH
 
-## TABLE OF CONTENTS
+## WELCOME
 
-- seed
-{:toc}
+Welcome to my website.
 
-## WELCOME TO MY WEBSITE
-
-This is my website
-
-I will be using this to potentially post things that I am working on or am interested in
+Here I will be posting projects that I am working on.
 
 ## POSTS
 <ul>

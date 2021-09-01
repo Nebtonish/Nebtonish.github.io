@@ -1,38 +1,40 @@
 <html>
 <head>
     <link rel="stylesheet" href="/assets/css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Webtonish</title>
 </head>
 <body>
 
 <div class="navbar" id="theNavBar">
-	<a class="active" href="#home">Home</a>
+	<div id="HomeButton">
+		<a href="/">
+			<img id="HomeButtonImg" alt="Home" src="/assets/img/logoNoBackground.png">
+			<span>&nbsp;Nebtonish</span>
+		</a>
+	</div>
 	<a href="/About">About</a>
-	<a href="#contact">Contact</a>
-	<a id="myBtn">&#x1F50E;&#xFE0E; Search By Heading</a>
+	<a id="myBtn">&#x1F50E;&#xFE0E; Table Of Contents</a>
 	<div id="modalSearchHeadings" class="modal">
 	  <div class="modal-content">
 		<span class="close">&times;</span>
-		<input type="text" id="mySearch" onkeyup="narrowSearch()" placeholder="Search.." title="Type in a category">
+		<input type="text" id="mySearch" onkeyup="narrowSearch()" placeholder="Search" title="Type in a category">
 		<div id="headingListDiv">
 		</div>
 	  </div>
 	</div>
-	<input type="text" placeholder="Search..">
+	<input type="text" placeholder="Search">
 	<a href="javascript:void(0);" class="icon" onclick="navBarDropDownOnClick()">
 		<i class="fa fa-bars"></i>
 	</a>
 </div>
 
 <div class="wrapper">
-    <div id="title">
+	<div id="title">
         <h1>
-            <a href="/">
-                WELCOME TO MY WEBSITE
-            </a>
+			Fantasy Game
         </h1>
-        <p>This is my website where I put content relating to me</p>
         <hr>
     </div>
 
@@ -63,7 +65,7 @@
 <h1 align="center"><img src="/assets/img/GameSS5.png" alt="Dungeon Depths" /></h1>
 
 
-	<h1 align="right"><img src="/assets/img/sig.png" style="width:140px;height:44px;"></h1>
+	<h1 align="right"><img alt="signature" src="/assets/img/sig.png" style="width:140px;height:44px;"></h1>
 </div>
 
 <script>
@@ -140,6 +142,14 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+$(document).ready(function() {
+	$("#HomeButtonImg").css("height", $("#myBtn").height());
+	
+	$("#myBtn").resize(function(){
+		$("#HomeButtonImg").css("height", $("#myBtn").height());
+    });
+});
 </script>
 
 </body>
