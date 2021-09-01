@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<input type="text" id="mySearch" onkeyup="narrowSearch()" placeholder="Search.." title="Type in a category">
+<input type="text" id="tocSearch" onkeyup="narrowSearch()" placeholder="Search.." title="Type in a category">
 
 <div id="headingListDiv">
 </div>
@@ -34,7 +34,7 @@
     </div>
 
     <h1 align="center"><img src="/assets/img/logo.png" alt="Logo" style="width:220px;height:220px;" /></h1>
-<script src="/assets/js/firstScript.js"></script>
+<script src="/assets/js/EveryPage.js"></script>
 
 <h1 id="nebtonish-website">NEBTONISH WEBSITE</h1>
 
@@ -88,7 +88,7 @@ function navBarDropDownOnClick() {
 
 function narrowSearch() {
   var input, filter, ul, li, a, i;
-  input = document.getElementById("mySearch");
+  input = document.getElementById("tocSearch");
   filter = input.value.toUpperCase();
   ul = document.getElementById("headerList");
   li = ul.getElementsByTagName("li");

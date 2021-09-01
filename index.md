@@ -3,7 +3,7 @@ title: Home Page
 ---
 
 <h1 align="center"><img src="/assets/img/logo.png" alt="Logo" style="width:220px;height:220px;"></h1>
-<script src="/assets/js/firstScript.js"></script>
+<script src="/assets/js/EveryPage.js"></script>
 
 # WEBTONISH
 
