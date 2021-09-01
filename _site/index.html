@@ -1,5 +1,237 @@
 <html>
 <head>
+	<style>
+		@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+
+		:root {
+			--font: 'Open Sans', sans-serif;
+			--navfont: 'Open Sans', sans-serif;
+			--bg-color: #282e38;
+			--title-color: #c778de;
+			--form-color: #464646;
+			--secondary-color: #c778de;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		#title {
+			margin: 50px 0 50px 0;
+			padding: 0 0 5px 0;
+
+		p {
+			font-family: var(--font);
+			color: #bed4d7;
+			text-align: center;
+			font-size: 20px;
+		}
+
+		h1 {
+			font-family: var(--font);
+			text-align: center;
+			font-size: 40px;
+			font-weight: normal;
+		}
+
+		a:link, a:visited {
+			color: var(--title-color);
+			text-decoration: none;
+		}
+
+		hr {
+			border-bottom: 2px dashed white;
+			background: transparent;
+		}
+		}
+
+		body {
+			background-color: var(--bg-color);
+			background-image: url("/assets/img/background.png");
+			background-attachment: fixed;
+		}
+
+		.wrapper {
+			font-family: var(--font);
+			color: #bdbdbd;
+			width: 700px;
+			margin: 0 auto;
+		}
+
+		h1 {
+			font-size: 22px;
+		}
+
+		h2, h3, h4, h5, h6 {
+			font-size: 17px;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		a:link, a:visited {
+			color: var(--secondary-color);
+		}
+
+		a:hover {
+			color: #34a5c7;
+		}
+
+		button, textarea, input {
+			background-color: var(--form-color);
+			color: white;
+			padding: 5px 10px;
+			margin: 4px 2px;
+			border: none;
+		}
+
+		button {
+			text-align: center;
+		}
+
+		textarea {
+			height: 115px;
+		}
+
+		.navbar {
+			font-family: var(--font);
+			overflow: hidden;
+			background-color: #3a3b41;
+			position: -webkit-sticky;
+			position: sticky;
+			top: 0;
+		}
+
+		.navbar a{
+			float: left;
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+			font-size: 17px;
+		}
+
+		.navbar img{
+			height: 1px;
+			width: auto;
+			float: left;
+			display: block;
+		}
+
+		.navbar a:hover {
+			background-color: #242526;
+			color: white;
+		}
+
+		#HomeButton span {
+			color: var(--secondary-color);
+		}
+
+		#HomeButton a {
+			background-color: #282931;
+		}
+
+		.navbar input[type=text] {
+			float: right;
+			padding: 6px;
+			border: none;
+			margin-top: 8px;
+			margin-right: 16px;
+			font-size: 17px;
+		}
+
+		.navbar .icon {
+			display: none;
+		}
+
+		@media screen and (max-width: 600px) {
+			.navbar a:not(:first-child) {display: none;}
+			.navbar a.icon {
+				float: right;
+				display: block;
+			}
+		}
+
+		@media screen and (max-width: 600px) {
+			.navbar.responsive {position: relative;}
+			.navbar.responsive a.icon {
+				position: absolute;
+				right: 0;
+				top: 0;
+			}
+			.navbar.responsive a {
+				float: none;
+				display: block;
+				text-align: left;
+			}
+		}
+
+		#mySearch {
+			width: 100%;
+			font-size: 18px;
+			padding: 11px;
+			border: 1px solid #ddd;
+			margin: auto;
+		}
+
+		#headerList {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		#headerList li a {
+			padding: 12px;
+			text-decoration: none;
+			color: white;
+			display: block;
+			float: left;
+			clear: left;
+		}
+
+		#headerList li a:hover {
+			background-color: #eee;
+			color: black;
+		}
+
+		#headingListDiv {
+			white-space: pre;
+			font-family: var(--font);
+		}
+
+		.modal {
+			display: none;
+			position: fixed;
+			z-index: 1;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			background-color: rgb(0,0,0);
+			background-color: rgba(0,0,0,0.4);
+		}
+
+		.modal-content {
+		//width: 80%
+		}
+
+		.close {
+			color: #aaa;
+			float: right;
+			font-size: 28px;
+			font-weight: bold;
+		}
+
+		.close:hover, .close:focus {
+			color: black;
+			text-decoration: none;
+			cursor: pointer;
+		}
+	</style>
+
     <link rel="stylesheet" href="/assets/css/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -80,46 +312,41 @@
 </div>
 
 <script>
+	//todo convert to jquery
 function navBarDropDownOnClick() {
-  var x = document.getElementById("theNavBar");
-  if (x.className === "navbar") {
-    x.className += " responsive";
+  var navBar = document.getElementById("theNavBar");
+  if (navBar.className === "navbar") {
+    navBar.className += " responsive";
   } else {
-    x.className = "navbar";
+    navBar.className = "navbar";
   }
 }
 
+//todo convert to jquery
 function narrowSearch() {
-  var input, filter, ul, li, a, i;
-  input = document.getElementById("mySearch");
-  filter = input.value.toUpperCase();
-  ul = document.getElementById("headerList");
-  li = ul.getElementsByTagName("li");
+	let searchString = document.getElementById("mySearch").value.toUpperCase();
+	let headerListItems = document.getElementById("headerList").getElementsByTagName("li");
 
-  for (i = 0; i < li.length; i++) {
-    a = li[i].getElementsByTagName("a")[0];
-    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
-    } else {
-      li[i].style.display = "none";
-    }
-  }
+	for (let i = 0; i < headerListItems.length; i++) {
+		if (headerListItems[i].getElementsByTagName("a")[0].innerHTML.toUpperCase().indexOf(searchString) > -1) {
+			headerListItems[i].style.display = "";
+		} else {
+			headerListItems[i].style.display = "none";
+		}
+	}
 }
 
 var $result = $('<ul id="headerList"></ul>');
-var curDepth = 0;
 
 $('h1,h2,h3,h4,h5,h6').addClass('tempHeadingTag');
 $('.tempHeadingTag').each(function() {
 	if (!$(this).attr('id')){
-		/*do not put an item for a heading with no id*/
+		/*do not include headings with no id in the toc (return true skips the current iteration)*/
 		return true;
 	}
 
-    var depth = parseInt(this.tagName.substring(1))-1;
-
 	var indents = "";
-	for (i = 0; i < depth; i++) {
+	for (i = 0; i < parseInt(this.tagName.substring(1))-1; i++) {
 		indents = indents + "  "
 	}
 	var $a = $('<a/>').attr("href", "#"+$(this).attr('id')).text(indents + $(this).text())
@@ -136,23 +363,25 @@ $(function(){
 
 
 
-var modal = document.getElementById("modalSearchHeadings");
-var btn = document.getElementById("myBtn");
-var span = document.getElementsByClassName("close")[0];
+//todo convert to jquery
+var tableOfContentsSearch = document.getElementById("modalSearchHeadings");
+var tableOfContentsButton = document.getElementById("myBtn");
+var closeButton = document.getElementsByClassName("close")[0];
 
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-span.onclick = function() {
-  modal.style.display = "none";
+tableOfContentsButton.onclick = function() {
+  tableOfContentsSearch.style.display = "block";
 }
 
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+	if (event.target === tableOfContentsSearch) {
+		tableOfContentsSearch.style.display = "none";
+	}
 }
+
+closeButton.onclick = function() {
+  tableOfContentsSearch.style.display = "none";
+}
+
 
 $(document).ready(function() {
 	$("#HomeButtonImg").css("height", $("#myBtn").height());
