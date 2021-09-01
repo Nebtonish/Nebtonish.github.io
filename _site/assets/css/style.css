@@ -46,12 +46,20 @@ textarea { height: 115px; }
 @media screen and (max-width: 600px) { .navbar.responsive { position: relative; }
   .navbar.responsive a.icon { position: absolute; right: 0; top: 0; }
   .navbar.responsive a { float: none; display: block; text-align: left; } }
-#mySearch { width: 100%; font-size: 18px; padding: 11px; border: 1px solid #ddd; }
+#mySearch { width: 100%; font-size: 18px; padding: 11px; border: 1px solid #ddd; margin: auto; }
 
 #headerList { list-style-type: none; padding: 0; margin: 0; }
 
-#headerList li a { padding: 12px; text-decoration: none; color: black; display: block; }
+#headerList li a { padding: 12px; text-decoration: none; color: white; display: block; float: left; clear: left; }
 
-#headerList li a:hover { background-color: #eee; }
+#headerList li a:hover { background-color: #eee; color: black; }
 
 #headingListDiv { white-space: pre; font-family: var(--font); }
+
+.modal { display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: black; background-color: rgba(0, 0, 0, 0.4); }
+
+.modal-content { width: 80%; }
+
+.close { color: #aaa; float: right; font-size: 28px; font-weight: bold; }
+
+.close:hover, .close:focus { color: black; text-decoration: none; cursor: pointer; }
