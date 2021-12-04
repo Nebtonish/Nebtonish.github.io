@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import "https://fonts.googleapis.com/css?family=Open+Sans";
 :root { --font: 'Open Sans', sans-serif; --navfont: 'Open Sans', sans-serif; --bg-color: #282e38; --title-color: #c778de; --form-color: #464646; --secondary-color: #c778de; }
 
@@ -52,6 +53,8 @@ textarea { height: 115px; }
   .navbar.responsive a { float: none; display: block; text-align: left; } }
 #tocSearch { font-size: 17px; padding: 12px; border: 1px solid #ddd; margin: auto; width: 100%; }
 
+.tocSearchContent { margin: auto; width: 700px; }
+
 #headerList { list-style-type: none; padding: 0; margin: 0; }
 
 #headerList li a { padding: 7px; display: block; text-decoration: none; color: white; float: left; clear: left; }
@@ -65,3 +68,11 @@ textarea { height: 115px; }
 .close { float: right; font-size: 30px; color: #afafaf; font-weight: bold; }
 
 .close:hover, .close:focus { cursor: pointer; color: black; }
+
+#content h1:before { content: '◉ '; position: relative; color: var(--secondary-color); z-index: -1; }
+
+#content h3:before, #content h5:before { content: '● '; position: relative; color: var(--secondary-color); z-index: -1; }
+
+#content h2:before, #content h4:before, #content h6:before { content: '○ '; position: relative; color: var(--secondary-color); z-index: -1; }
+
+.NebTree { height: 81px; }

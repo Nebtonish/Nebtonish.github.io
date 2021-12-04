@@ -173,6 +173,11 @@ textarea {
   width: 100%;
 }
 
+.tocSearchContent {
+  margin: auto;
+  width: 700px;
+}
+
 #headerList {
   list-style-type: none;
   padding: 0;
@@ -222,4 +227,29 @@ textarea {
 .close:hover, .close:focus {
   cursor: pointer;
   color: black;
+}
+
+#content h1:before {
+  content: '◉ ';
+  position: relative;
+  color: var(--secondary-color);
+  z-index: -1;
+}
+
+#content h3:before, #content h5:before {
+  content: '● ';
+  position: relative;
+  color: var(--secondary-color);
+  z-index: -1;
+}
+
+#content h2:before, #content h4:before, #content h6:before {
+  content: '○ ';
+  position: relative;
+  color: var(--secondary-color);
+  z-index: -1;
+}
+
+.NebTree {
+  height: 81px;
 }
